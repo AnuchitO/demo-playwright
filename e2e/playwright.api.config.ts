@@ -2,7 +2,7 @@ import {defineConfig} from '@playwright/test'
 export default defineConfig({
   use: {
     // All requests we send go to this API endpoint.
-    baseURL: 'https://api.github.com',
+    baseURL: process.env.API_BASE_URL || 'http://localhost:8080',
     extraHTTPHeaders: {
       // We set this header per GitHub guidelines.
       Accept: 'application/vnd.github.v3+json',
